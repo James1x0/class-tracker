@@ -1,0 +1,11 @@
+{{progress-bar min=0 max=100 value=completed striped=true animated=true barClass="progress-bar-primary"}}
+<h4 class="text-center"><i class="fa fa-thumbs-up"></i> You are {{completed}}% complete.</h4>
+
+{{#each content as |class|}}
+  <h3>{{title-case class.subject}}</h3>
+  <ul>
+    {{#each class.courses as |course|}}
+      <li><i {{bind-attr class=":fa course.completed:fa-check:fa-circle-o"}}></i> {{title-case course.name}}</li>
+    {{/each}}
+  </ul>
+{{/each}}
